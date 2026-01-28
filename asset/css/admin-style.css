@@ -1,0 +1,79 @@
+/* Admin Dashboard Styles */
+:root {
+  --primary: #2563eb;
+  --sidebar-bg: #1e293b;
+  --content-bg: #f8fafc;
+}
+
+body {
+  background-color: var(--content-bg) !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.navbar-default {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.5rem 0;
+}
+
+.navbar-brand {
+  font-weight: 800 !important;
+  color: var(--primary) !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #64748b !important;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: var(--primary) !important;
+  background-color: transparent !important;
+}
+
+.jumbotron {
+  background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  margin-top: 2rem !important;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+.jumbotron h1 {
+  font-weight: 800 !important;
+  letter-spacing: -1px;
+}
+
+/* Card Styling for tables/forms */
+.container > .panel,
+.container > .table-responsive {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 600 !important;
+}
+
+.table thead {
+  background-color: #f1f5f9;
+}
+
+.table thead th {
+  border: none !important;
+  color: #475569 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
