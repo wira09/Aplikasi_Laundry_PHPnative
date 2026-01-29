@@ -73,7 +73,7 @@ if(isset($_SESSION['id'])){
       <?php
     }else{
         ?>
-      <a href="#" class="btn btn-primary">Konfirmasi</a>
+      <!-- <a href="#" class="btn btn-primary">Konfirmasi</a> -->
         <?php
             }
          ?>

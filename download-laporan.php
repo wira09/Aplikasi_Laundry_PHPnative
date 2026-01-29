@@ -117,7 +117,7 @@ $No_Order = $_GET['cetak'];
     $tgl1 = $hasil['Tgl_Terima'];
     $tgl2 = date('Y-m-d', strtotime('+2 days', strtotime($tgl1)));
   ?>
-    <div class="header">
+    <!-- <div class="header">
       <h1>PUTRI LAUNDRY</h1>
       <div class="tagline">
         MAU NGIRIT AIR / LISTRIK DATANG KE LAUNDRY AJA
@@ -125,7 +125,7 @@ $No_Order = $_GET['cetak'];
       <div class="alamat">
         Jl. Contoh No. 123 - No. HP: 0812 9095 3790
       </div>
-    </div>
+    </div> -->
     <table class="info-table">
       <tr>
         <td width="15%"><strong>Nama</strong></td>
