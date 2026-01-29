@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 29 Jan 2026 pada 04.20
+-- Waktu pembuatan: 29 Jan 2026 pada 05.02
 -- Versi server: 8.0.30
 -- Versi PHP: 8.1.10
 
@@ -29,16 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int NOT NULL,
+  `nama` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `pass` varchar(255) NOT NULL
+  `pass` varchar(255) NOT NULL,
+  `role` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`id`, `email`, `pass`) VALUES
-(1, 'sbd8@email.com', 'bismillah');
+INSERT INTO `admin` (`id`, `nama`, `email`, `pass`, `role`) VALUES
+(1, 'wira', 'sbd8@email.com', 'bismillah', 'admin'),
+(2, 'berlian', 'berlian@gmail.com', 'berlian123', 'user');
 
 -- --------------------------------------------------------
 
@@ -72,7 +75,8 @@ INSERT INTO `detail_transaksi` (`No_Order`, `Id_Pakaian`, `Jumlah_pakaian`) VALU
 ('1140', 'B2', 1),
 ('1141', 'B1', 2),
 ('1140', 'C2', 2),
-('1141', 'C1', 1);
+('1141', 'C1', 1),
+('1142', 'B2', 2);
 
 -- --------------------------------------------------------
 
@@ -125,20 +129,22 @@ CREATE TABLE `pelanggan` (
   `No_Identitas` char(8) NOT NULL,
   `Nama` varchar(30) NOT NULL,
   `Alamat` varchar(30) DEFAULT NULL,
-  `No_Hp` varchar(15) NOT NULL
+  `No_Hp` varchar(15) NOT NULL,
+  `admin_id` int DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`No_Identitas`, `Nama`, `Alamat`, `No_Hp`) VALUES
-('10115562', 'Hani', 'Bandung', '081232121111'),
-('10115310', 'Barrur', 'Bandung', '089123222321'),
-('10115315', 'Nanda', 'Bandung', '087824521555'),
-('10115313', 'Fata', 'Bandung', '087822555784'),
-('10115322', 'Sinta', 'Bandung', '082313112111'),
-('10115320', 'Nur', 'Bandung', '082122122122');
+INSERT INTO `pelanggan` (`No_Identitas`, `Nama`, `Alamat`, `No_Hp`, `admin_id`) VALUES
+('10115562', 'Hani', 'Bandung', '081232121111', NULL),
+('10115310', 'Barrur', 'Bandung', '089123222321', NULL),
+('10115315', 'Nanda', 'Bandung', '087824521555', NULL),
+('10115313', 'Fata', 'Bandung', '087822555784', NULL),
+('10115322', 'Sinta', 'Bandung', '082313112111', NULL),
+('10115320', 'Nur', 'Bandung', '082122122122', NULL),
+('1212123', 'Berlian', 'bebas', '08123123134', 2);
 
 -- --------------------------------------------------------
 
@@ -169,7 +175,8 @@ INSERT INTO `transaksi` (`No_Order`, `No_Identitas`, `Tgl_Terima`, `Tgl_Ambil`, 
 ('1138', '10115322', '2017-06-12', '2017-06-14', 2.7, 0, 16200, 1),
 ('1139', '10115320', '2017-06-13', '2017-06-14', 4, 0, 24000, 1),
 ('1140', '10115310', '2018-01-23', '2018-01-23', 3, 0, 21000, 0),
-('1141', '10115310', '2018-01-23', '2018-01-23', 3, 0, 21000, 0);
+('1141', '10115310', '2018-01-23', '2018-01-23', 3, 0, 21000, 0),
+('1142', '1212123', '2026-01-29', '2026-01-29', 20000, 0, 20000, 2);
 
 --
 -- Indexes for dumped tables
@@ -218,7 +225,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
