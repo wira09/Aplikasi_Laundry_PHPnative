@@ -8,7 +8,7 @@ if (isset($_SESSION['id'])) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PUTRI LAUNDRY</title>
+    <title>Hum Hum Laundry</title>
 
     <?php
     include "include/header.php";
@@ -29,7 +29,7 @@ if (isset($_SESSION['id'])) {
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">🧺 Putri Laundry</a>
+          <a class="navbar-brand" href="#">🧺 Hum Hum Laundry</a>
         </div>
         <ul class="nav navbar-nav">
           <?php

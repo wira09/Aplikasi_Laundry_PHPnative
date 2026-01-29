@@ -10,7 +10,7 @@ $pdf->SetFont('Arial', 'B', 16);
 // mencetak string 
 $pdf->Cell(190, 7, 'Laporan', 0, 1, 'C');
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(190, 7, 'Putri Laundry', 0, 1, 'C');
+$pdf->Cell(190, 7, 'Hum Hum Laundry', 0, 1, 'C');
 
 // Memberikan space kebawah agar tidak terlalu rapat
 $pdf->Cell(10, 7, '', 0, 1, 'C');

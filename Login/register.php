@@ -2,13 +2,10 @@
 <html lang="id">
 
 <head>
-    <title>Login | Hum Hum Laundry</title>
+    <title>Registrasi | Hum Hum Laundry</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --primary: #2563eb;
@@ -36,7 +33,7 @@
         .login-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             width: 100%;
@@ -58,38 +55,34 @@
 
         .login-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .login-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--text-main);
             margin-bottom: 0.5rem;
             font-weight: 800;
         }
 
-        .login-header p {
-            color: #64748b;
-        }
-
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             color: var(--text-main);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 1rem 1.25rem;
+            padding: 0.8rem 1rem;
             border: 2px solid #e2e8f0;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             outline: none;
         }
@@ -101,16 +94,16 @@
 
         .btn-submit {
             width: 100%;
-            padding: 1rem;
+            padding: 0.9rem;
             background: var(--primary);
             color: white;
             border: none;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
 
         .btn-submit:hover {
@@ -122,12 +115,11 @@
         .back-link {
             display: block;
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             color: #64748b;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: color 0.3s ease;
         }
 
         .back-link:hover {
@@ -137,33 +129,28 @@
 </head>
 
 <body>
-
     <div class="login-card">
         <div class="login-header">
-            <h2>Selamat Datang</h2>
-            <p>Silakan masuk ke akun Hum Hum Laundry</p>
+            <h2>Buat Akun Baru</h2>
+            <p>Daftar sebagai anggota Hum Hum Laundry</p>
         </div>
-
-        <form action="../login.php" method="post">
+        <form action="../proses-register.php" method="post">
             <div class="form-group">
-                <label for="email">ALAMAT EMAIL</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="admin@example.com" required>
+                <label>NAMA LENGKAP</label>
+                <input type="text" name="nama" class="form-control" placeholder="Nama Anda" required>
             </div>
-
             <div class="form-group">
-                <label for="pass">KATA SANDI</label>
-                <input type="password" id="pass" name="pass" class="form-control" placeholder="••••••••" required>
+                <label>ALAMAT EMAIL</label>
+                <input type="email" name="email" class="form-control" placeholder="email@example.com" required>
             </div>
-
-            <button type="submit" name="submit" class="btn-submit">
-                LOGIN
-            </button>
+            <div class="form-group">
+                <label>KATA SANDI</label>
+                <input type="password" name="pass" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" name="submit" class="btn-submit">DAFTAR SEKARANG</button>
         </form>
-
-        <a href="./register.php" class="back-link">Registrasi</a>
-        <a href="../index.php" class="back-link">← Kembali ke Beranda</a>
+        <a href="index.php" class="back-link">Sudah punya akun? Masuk di sini</a>
     </div>
-
 </body>
 
 </html>

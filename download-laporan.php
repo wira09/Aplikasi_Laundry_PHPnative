@@ -118,7 +118,7 @@ $No_Order = $_GET['cetak'];
     $tgl2 = date('Y-m-d', strtotime('+2 days', strtotime($tgl1)));
   ?>
     <!-- <div class="header">
-      <h1>PUTRI LAUNDRY</h1>
+      <h1>Hum Hum Laundry</h1>
       <div class="tagline">
         MAU NGIRIT AIR / LISTRIK DATANG KE LAUNDRY AJA
       </div>

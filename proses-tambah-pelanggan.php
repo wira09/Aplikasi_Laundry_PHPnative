@@ -1,19 +1,26 @@
-<?php
+session_start();
 include "include/koneksi.php";
 
 $No_Identitas = $_POST["No_Identitas"];
 $Nama = $_POST["Nama"];
 $Alamat = $_POST["Alamat"];
 $No_Hp = $_POST["No_Hp"];
+$admin_id = $_SESSION['id'];
 
-if(empty($_POST["No_Identitas"]) || empty($_POST["Nama"]) || empty($_POST["Alamat"]) || empty($_POST["No_Hp"])){
-	echo "<script language='javascript'>alert('Gagal di tambahkan');</script>";
-	echo '<meta http-equiv="refresh" content="0; url=tambahdatapelanggan.php">';
+if(empty($No_Identitas) || empty($Nama) || empty($Alamat) || empty($No_Hp)){
+echo "<script language='javascript'>
+	alert('Gagal di tambahkan');
+</script>";
+echo '
+<meta http-equiv="refresh" content="0; url=tambahdatapelanggan.php">';
 }else{
-	$sql = "INSERT INTO `pelanggan` (`No_Identitas`, `Nama`, `Alamat`, `No_Hp`)
-			VALUES ('$No_Identitas', '$Nama', '$Alamat', '$No_Hp')";
-			$kueri = mysqli_query($conn, $sql);
-			echo "<script language='javascript'>alert('Berhasil di tambahkan');</script>";
-			echo '<meta http-equiv="refresh" content="0; url=pelanggan.php">';
+$sql = "INSERT INTO `pelanggan` (`No_Identitas`, `Nama`, `Alamat`, `No_Hp`, `admin_id`)
+VALUES ('$No_Identitas', '$Nama', '$Alamat', '$No_Hp', '$admin_id')";
+$kueri = mysqli_query($conn, $sql);
+echo "<script language='javascript'>
+	alert('Berhasil di tambahkan');
+</script>";
+echo '
+<meta http-equiv="refresh" content="0; url=pelanggan.php">';
 }
 ?>
